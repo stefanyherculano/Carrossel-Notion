@@ -10,27 +10,29 @@ body {
 
 .carrossel {
     position: relative;
-    width: 1080px;
-    height: 1350px;
+    width: 1080px; /* Largura fixa para o espaço entre as setas */
+    height: 1350px; /* Altura fixa para o espaço entre as setas */
     overflow: hidden;
-    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .carrossel-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
 }
 
 .carrossel-container img {
-    width: 1080px;
-    height: 1350px;
-    object-fit: cover;
+    width: 1080px; /* Largura fixa da imagem */
+    height: 1350px; /* Altura fixa da imagem */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    flex-shrink: 0; /* Impede que as imagens reduzam de tamanho */
 }
 
 .carrossel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     background-color: transparent;
     border: none;
     color: white;
@@ -38,14 +40,7 @@ body {
     cursor: pointer;
     padding: 10px;
     user-select: none;
-}
-
-.carrossel-btn.anterior {
-    left: 10px;
-}
-
-.carrossel-btn.proximo {
-    right: 10px;
+    z-index: 10; /* Garante que as setas fiquem acima das imagens */
 }
 
 .carrossel-btn:hover {
