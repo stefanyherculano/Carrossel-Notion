@@ -17,6 +17,7 @@ body {
     overflow: hidden; /* Esconde o conteúdo que excede o tamanho do carrossel */
     border-radius: 20px; /* Bordas arredondadas */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra para efeito de profundidade */
+    user-select: none; /* Impede a seleção de texto ao arrastar */
 }
 
 .carrossel-container {
@@ -38,20 +39,19 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    background-color: transparent; /* Sem fundo */
     border: none;
-    color: white;
+    color: white; /* Setas brancas */
     font-size: 32px; /* Tamanho maior para as setas */
     cursor: pointer;
     padding: 15px;
-    border-radius: 50%; /* Botões circulares */
     user-select: none;
     z-index: 10; /* Garante que as setas fiquem acima das imagens */
-    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+    transition: opacity 0.3s ease; /* Transição suave ao passar o mouse */
 }
 
 .carrossel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Fundo mais escuro ao passar o mouse */
+    opacity: 0.8; /* Efeito de transparência ao passar o mouse */
 }
 
 .carrossel-btn.anterior {
@@ -60,4 +60,17 @@ body {
 
 .carrossel-btn.proximo {
     right: 20px; /* Posiciona a seta "próximo" à direita */
+}
+
+.contador {
+    position: absolute;
+    bottom: 20px; /* Posiciona o contador na parte inferior */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta a centralização */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo preto semi-transparente */
+    color: white; /* Texto branco */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 20px; /* Bordas arredondadas */
+    font-size: 18px; /* Tamanho da fonte */
+    z-index: 10; /* Garante que o contador fique acima das imagens */
 }
