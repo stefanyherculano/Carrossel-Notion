@@ -5,8 +5,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #000; /* Fundo preto para um visual moderno */
     overflow: hidden; /* Remove a barra de rolagem da página inteira */
+    font-family: Arial, sans-serif;
 }
 
 .carrossel {
@@ -14,6 +15,8 @@ body {
     width: 1080px; /* Largura fixa do carrossel */
     height: 1350px; /* Altura fixa do carrossel */
     overflow: hidden; /* Esconde o conteúdo que excede o tamanho do carrossel */
+    border-radius: 20px; /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra para efeito de profundidade */
 }
 
 .carrossel-container {
@@ -28,30 +31,33 @@ body {
     height: 1350px; /* Altura fixa da imagem */
     object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
     flex-shrink: 0; /* Impede que as imagens reduzam de tamanho */
+    border-radius: 20px; /* Bordas arredondadas nas imagens */
 }
 
 .carrossel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
     border: none;
     color: white;
-    font-size: 24px;
+    font-size: 32px; /* Tamanho maior para as setas */
     cursor: pointer;
-    padding: 10px;
+    padding: 15px;
+    border-radius: 50%; /* Botões circulares */
     user-select: none;
     z-index: 10; /* Garante que as setas fiquem acima das imagens */
-}
-
-.carrossel-btn.anterior {
-    left: 10px; /* Posiciona a seta "anterior" à esquerda */
-}
-
-.carrossel-btn.proximo {
-    right: 10px; /* Posiciona a seta "próximo" à direita */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
 }
 
 .carrossel-btn:hover {
-    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo mais escuro ao passar o mouse */
+}
+
+.carrossel-btn.anterior {
+    left: 20px; /* Posiciona a seta "anterior" à esquerda */
+}
+
+.carrossel-btn.proximo {
+    right: 20px; /* Posiciona a seta "próximo" à direita */
 }
