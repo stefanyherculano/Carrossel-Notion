@@ -56,3 +56,10 @@ button:hover {
 .next {
     right: 20px;
 }
+.carousel-slide {
+    width: 1080px; /* Largura fixa */
+    height: 1350px; /* Altura fixa */
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat;
+}
