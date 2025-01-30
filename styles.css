@@ -41,4 +41,17 @@ body {
     cursor: pointer;
     padding: 10px;
     user-select: none;
-    z-index: 10; /* Garante que as setas fiquem acima
+    z-index: 10; /* Garante que as setas fiquem acima das imagens */
+}
+
+.carrossel-btn.anterior {
+    left: 10px; /* Posiciona a seta "anterior" à esquerda */
+}
+
+.carrossel-btn.proximo {
+    right: 10px; /* Posiciona a seta "próximo" à direita */
+}
+
+.carrossel-btn:hover {
+    opacity: 0.8;
+}
