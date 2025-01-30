@@ -1,15 +1,18 @@
-let index = 0;
+let currentIndex = 0;
 
-function moveSlide(step) {
-    const slides = document.querySelectorAll(".carousel-slide");
-    
-    index += step;
-    
-    if (index < 0) {
-        index = slides.length - 1;
-    } else if (index >= slides.length) {
-        index = 0;
+function moverCarrossel(direction) {
+    const container = document.querySelector('.carrossel-container');
+    const images = document.querySelectorAll('.carrossel-container img');
+    const totalImages = images.length;
+
+    currentIndex += direction;
+
+    if (currentIndex >= totalImages) {
+        currentIndex = 0;
+    } else if (currentIndex < 0) {
+        currentIndex = totalImages - 1;
     }
 
-    document.querySelector(".carousel").style.transform = `translateX(${-index * 100}%)`;
+    const offset = -currentIndex * 1080;
+    container.style.transform = `translateX(${offset}px)`;
 }
